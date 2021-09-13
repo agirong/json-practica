@@ -1,0 +1,10 @@
+{
+    "personas":[
+        {"nombre": "kelly", "nickname":"kvilchez"},
+        {"nombre": "denis", "nickname":"dfz"},
+        {"nombre": "arli", "nickname":"arlij"},
+        {"nombre": "nemesis", "nickname":"neme"},
+        {"nombre": "anyi", "nickname":"anyig"},
+        {"nombre": "irvin", "nickname":"irvin123"}
+    ]
+}

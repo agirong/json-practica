@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="personas"></ol>
+    <script>
+        // var persona={
+        //     "nombre" : "aaron",
+        //     "apellido":"giron",
+        //     "edad":"22",
+        //     "nickname":"aurong"
+            
+        // };
+
+        // var personas = [
+        //     {"nombre": "kelly", "nickname":"kvilchez"},
+        //     {"nombre": "denis", "nickname":"dfz"},
+        //     {"nombre": "arli", "nickname":"arlij"},
+        //     {"nombre": "nemesis", "nickname":"neme"},
+        //     {"nombre": "anyi", "nickname":"anyig"}
+        // ];
+
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var respuesta = JSON.parse(xhttp.responseText);
+            console.log(respuesta);
+            
+            var personas = respuesta.personas;
+
+            var salida='';
+            
+            for(var i=0; i<personas.length; i++){
+                
+                salida += `<li>${personas[i].nombre} su nickname es ${personas[i].nickname}</li>`;
+            }
+            
+            document.getElementById('personas')
+            .innerHTML = salida;
+
+        }
+    };
+    xhttp.open("GET", "personas.json", true);
+    xhttp.send();
+        
+    </script>
+</body>
+</html>
